@@ -1,0 +1,131 @@
+<div class="container">    
+    <div class="row">
+        <div class="col-lg-12">
+            <div style="margin-top: 50px;" class="shadow">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Sr.no</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>City</th>
+                            <th>Pincode</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor="let obj of students$ |async; let i = index ">
+                            <td>{{i+1}}</td>
+                            <td>{{obj.firstName}}</td>
+                            <td>{{obj.lastName}}</td>
+                            <td>{{obj.address.city}}</td>
+                            <td>{{obj.address.pinCode}}</td>
+                            <td><button (click)="deleteRecord(obj)" type="button" class="btn btn-outline-danger">Delete</button> &nbsp; 
+                                <button (click)="pathFormValues(obj)" type="button" class="btn btn-outline-info">Update</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+
+<div class="outer-main-div">
+   <form [formGroup]="regForm" class="outer-main shadow" >
+
+    <h3 class="text-muted"><u>Registration Form</u></h3>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="form-label">First Name</label>
+                    <input formControlName="firstName" type="text" class="form-control">
+                    <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
+                        <small *ngIf="firstName.errors?.['required']" >First name is required.</small>                                             
+                    </div>
+                    <small *ngIf="regForm?.hasError('fandlMismatch')">First name and last name must be different</small>  
+        
+                   
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="form-label">Last Name</label>
+                    <input formControlName="lastName" type="text" class="form-control">
+                    <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+                        <small *ngIf="lastName.errors?.['required']" >lastName is required.</small>                                    
+                    </div>                    
+                     <small *ngIf="regForm.errors?.['fandlMismatch']" >First name and last name must be different.</small> 
+                </div>
+            </div>
+        </div>
+
+        <div formGroupName="address">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-label">City</label>
+                        <input formControlName="city" type="text" class="form-control">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-label">Pin Code</label>
+                        <input formControlName="pinCode" type="text" class="form-control">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <hr>
+        <h4 class="text-muted">Parent Details</h4>       
+        <button [disabled]="!parentDetails.valid" (click)="addNewControl()" class="btn btn-primary btn-block shadow">
+            <i class="bi bi-person-plus"></i>
+        </button>   
+      
+        <hr>
+
+        <div formArrayName="parentDetails">
+            <div *ngFor="let fControl of parentDetails.controls; let i = index" [formGroupName]="i" >                 
+                
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label class="form-label">Parent name</label>
+                                <input formControlName="parentName" type="text" class="form-control">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label class="form-label">Contact number</label>
+                                <input formControlName="contactNo" type="text" class="form-control">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">                              
+                                <button *ngIf="i>0" (click)="removeNewControl(i)" class="btn btn-danger btn-remove"><i class="bi bi-person-x"></i></button>
+                            </div>                                          
+                        </div>
+                    </div>                
+            </div>              
+        </div>
+
+        <div  class="d-grid gap-2">
+            <button *ngIf="btnStatus=='submit'"  [disabled]="!regForm.valid" (click)="submitFormDetails()" class="btn btn-primary btnadd">Submit Form</button>
+            <button *ngIf="btnStatus=='update'"  [disabled]="!regForm.valid" (click)="UpdateFormDetails()" class="btn btn-primary btnadd">Update Form</button>
+        </div>        
+   </form>
+</div>
+</div>

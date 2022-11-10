@@ -1,0 +1,25 @@
+
+<div class="container">
+
+    <form #registrationForm="ngForm" (ngSubmit)="LoginMethod(registrationForm.value)">        
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="text" class="form-control" #email="ngModel" name="email"  ngModel  required  minlength="3"  maxlength="10">
+
+        <div *ngIf="email.invalid" >
+             <div *ngIf="email.hasError('required')" class="form-text ">Email Id required.</div>
+             <div *ngIf="email.hasError('minlength')" class="form-text">minimun length must be 3.</div>           
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="text" class="form-control" name="pass" ngModel required>
+      </div>
+     
+      <button [disabled]="registrationForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+   
+
+</div>

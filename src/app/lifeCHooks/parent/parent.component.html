@@ -1,0 +1,13 @@
+<p>parent works!</p>
+
+
+
+
+<label>Parent Value:</label>
+
+<input type="text" #parent (keyup)="sendParentValue(parent.value)">
+<br>
+<button class="btn btn-success" (click)="HideShowChild()" >Toggle</button>
+
+
+<app-child *ngIf="IsActive" [parentValue]="pValue"></app-child>

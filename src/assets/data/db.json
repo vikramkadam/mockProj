@@ -1,0 +1,78 @@
+{
+  "nestedReactiveForm": [
+    {
+      "firstName": "vikram",
+      "lastName": "kadam patil",
+      "address": {
+        "city": "manwath",
+        "pinCode": "431505"
+      },
+      "id": 1
+    },
+    {
+      "firstName": "ganesh",
+      "lastName": "gadade",
+      "address": {
+        "city": "manwath",
+        "pinCode": "431505"
+      },
+      "id": 2
+    },
+    {
+      "firstName": "vishwajeet ",
+      "lastName": "ghumbre",
+      "address": {
+        "city": "jalna",
+        "pinCode": "454565"
+      },
+      "id": 5
+    }
+  ],
+  "arrayRF": [
+    {
+      "firstName": "vikramrao",
+      "lastName": "kadam patil",
+      "address": {
+        "city": "manwath city",
+        "pinCode": "431505g"
+      },
+      "parentDetails": [
+        {
+          "parentName": "vitthalrao",
+          "contactNo": "kadam"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "firstName": "sachin",
+      "lastName": "sonuwane",
+      "address": {
+        "city": "manwath",
+        "pinCode": "jfls"
+      },
+      "parentDetails": [
+        {
+          "parentName": "slfjsl",
+          "contactNo": "ljlsj"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "firstName": "ganesh",
+      "lastName": "ghumbre",
+      "address": {
+        "city": "waghal",
+        "pinCode": "6464"
+      },
+      "parentDetails": [
+        {
+          "parentName": "nagorao",
+          "contactNo": "+46464"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}

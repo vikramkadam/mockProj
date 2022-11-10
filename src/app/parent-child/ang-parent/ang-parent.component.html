@@ -1,0 +1,11 @@
+<p>ang-parent works!</p>
+<label>Enter Parent Text:</label>
+<input style="width: 400px;" class="form-control" type="text" [(ngModel)]="pvalue" >
+<br>
+<label>Child Value is: </label>
+<p>{{childValue}}</p>
+
+
+<hr>
+
+<app-ang-child [receivedValue]="pvalue" (EmitedValue)="getChildValue($event)" ></app-ang-child>
