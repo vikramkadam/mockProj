@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AngParentComponent } from './parent-child/ang-parent/ang-parent.component';
 import { AngChildComponent } from './parent-child/ang-child/ang-child.component';
+import { CompDirComponent } from './directives/comp-dir/comp-dir.component';
+import { HighlighterDirDirective } from './directives/highlighter-dir.directive';
 
 // ToastrModule.forRoot({
 //   timeOut: 2000,
@@ -37,7 +39,9 @@ import { AngChildComponent } from './parent-child/ang-child/ang-child.component'
     NestedRFComponent,
     ArrayFormComponent,
     AngParentComponent,
-    AngChildComponent
+    AngChildComponent,
+    CompDirComponent,
+    HighlighterDirDirective
   ],
   imports: [
     BrowserModule,

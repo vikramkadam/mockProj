@@ -73,6 +73,21 @@
         }
       ],
       "id": 3
+    },
+    {
+      "firstName": "vikram",
+      "lastName": "kadam",
+      "address": {
+        "city": "manwath",
+        "pinCode": "4531"
+      },
+      "parentDetails": [
+        {
+          "parentName": "vikram",
+          "contactNo": "kadam"
+        }
+      ],
+      "id": 4
     }
   ]
 }
