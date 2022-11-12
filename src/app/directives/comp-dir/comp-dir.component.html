@@ -1,0 +1,180 @@
+<div class="container">
+
+
+    <div class="row">
+        <div appHighlighterDir class="col-lg-3 shadow" style="padding: 5px;margin: 5px; border: 1px solid gray;">
+            <h3>Component Directive</h3>
+            <p>Component directive is used to specify the template/html for the DOM Layout</p>
+            <p>Built-In:<b>@Component</b></p>
+        </div>
+        <div appHighlighterDir class="col-lg-3 shadow" style="padding: 5px;margin: 5px; border: 1px solid gray;">
+            <h3>Attribute Directive</h3>
+            <p>Attribute directive is used to change/modify the behavior of the html element in the DOM Layout </p>
+            <p>Built-In:<b>NgModel,ngStyle,ngClass</b></p>
+        </div>
+        <div appHighlighterDir class="col-lg-3 shadow" style="padding: 5px;margin: 5px; border: 1px solid gray;">
+            <h3>Stractural Directive</h3>
+            <p>Stractural directive used to add or remove the html Element in the DOM Layout.</p>
+            <p>Built-In:<b>*ngIf,*ngFor,*ngSwitch</b></p>
+        </div>
+    </div>
+
+
+    <!-- component Directive -->
+    <details>
+        <summary>Component Directive:</summary>
+        <div class="component-dir shadow" style="padding: 20px;">
+            <h1>Component Directives:</h1>
+            <p class="text-muted">
+                Component Directives is nothing but a TypeScript Class, with @Component decorator.<br>
+                It is used to specify the HTML page or Templates.
+            </p>
+        </div>
+      </details>
+
+    <!-- Stractural Directive *ngIf,*ngFor,[ngSWitch] -->
+    <details>
+        <summary>Stractular Directive:</summary>
+        <div class="component-dir shadow" style="padding: 20px;margin: 20px;">
+            <h1>Stractural Directives:</h1>
+            <p class="text-muted">
+                Stractural directives are used to change behaviour ,look and layout of html page or dom.<br>
+                three types of stractural directives:<br>
+            </p>
+            <ol>
+                <li>*ngIf</li>
+                <li>*ngFor</li>
+                <li>ngSwitch</li>
+            </ol>
+
+            <hr>
+
+            <h4>1. ngIf Directive:</h4>
+            <p> Is used to change the layout of DOM by adding and removing html element.</p>
+            <button class="btn btn-danger" (click)="changeStatus()">Toggle</button>
+
+            <ng-container *ngIf="binding ; then thenBlock else elsePart">
+                <p>This is If Part.</p>
+            </ng-container>
+
+            <ng-template #thenBlock>
+                <p>This is then block. When then condition adds then if condition automatically gets skipped.</p>
+            </ng-template>
+
+            <ng-template #elsePart>
+                <p>This is the else part.</p>
+            </ng-template>
+            <hr>
+            <h4>1. ngFor Directive:</h4>
+            <p> Is used to change the layout of DOM by adding elements by iterating over array.</p>
+
+            <ol *ngFor="let ele of obsData$ | async">
+                <li>{{ele.firstName}} ,{{ele.lastName}}, {{ele.address.city}}, {{ele.address.pinCode}}</li>
+            </ol>
+
+            <hr>
+            <h4>1. ngSwitch Directive:</h4>
+            <p> Is used to change the layout of DOM by adding and removing html element.</p>
+            <input type="text" placeholder="Enter Case name" (keyup)="changeSwitchValue($event.target)">
+            <br>
+            <b>OR select the Select List Item:</b>
+            <br>
+
+            <select (change)="changeSwitchValue($event.target)">
+                <option value="one">one</option>
+                <option value="two">two</option>
+                <option value="tgree">three</option>
+                <option value="">Default</option>
+            </select>
+
+            <div [ngSwitch]="switchValue">
+                <p *ngSwitchCase="'one'">Case One Is Selected</p>
+                <p *ngSwitchCase="'two'">Case two Is Selected</p>
+                <p *ngSwitchCase="'three'">Case three Is Selected</p>
+                <p *ngSwitchDefault>Case Default</p>
+            </div>
+            <hr>
+        </div>
+      </details>
+
+    <!--Attribute Directive-->
+    <details>
+        <summary>Attribute Directives:</summary>
+        <div class="component-dir shadow" style="padding: 20px;">
+            <h1>Attribute Directives:</h1>
+            <p class="text-muted">
+                Attribute directives manipulate the DOM by changing its behavior and appearance.
+                <br> We use attribute directives to apply conditional Styles & Classes to elements,
+                show or hide elements or dynamically change the behavior of a component according to the changng
+                property.
+            </p>
+            <h6>Commonly used Attribute Directives:</h6>
+            <ol>
+                <li>NgModel</li>
+                <li>ngStyle</li>
+                <li>ngClass</li>
+            </ol>
+
+            <hr>
+            <h4>NgModel: </h4><p>The ngModel attribute directive is used the achieve the two-way data binding.</p>
+            <label>Enter Two way value:</label>
+            <input type="text" [(ngModel)]="ngModelValue" >
+            <p>NgModel Value is : {{ngModelValue}}</p>
+            <hr>
+
+            <hr>
+            <h4>NgClass: </h4><p>The ngClass is used to add ore remove the CSS classes from an HTML element.</p>
+            <p  class="cls-red size">1.This is Paragraph with normal class binding:  class="red"</p>
+            <p  [className]=" 'cls-green' ">1.The ClassName is the property of HTML element thats why we use property binding here:  [className]="'cls-green'"</p>
+            <p  [className]=" 'cls-green size' ">1.We can add two classes with same time: [className]=" 'cls-green size' "</p>
+            <p [className]=" 'cls-yellow size ? activatedClass : cls-red' ">Conditionally apply class: [className]=" 'cls-yellow ? activatedClass : cls-red' "</p>
+            <br>
+
+            <p  [ngClass]="'cls-red size'">1. Using ngClass we can apply classes to HTML  Element: (ngClass with string) [ngClass]="'cls-red size'"</p>
+            <p  [ngClass]="['cls-red size']">2. (ngClass with Array) [ngClass]="['cls-red size']"</p>
+            <p  [ngClass]="{'cls-red':true,'size':true}"> 3. (ngClass with Object)  </p>
+
+            <h5>We can conditionally appy class: with : *ngFor="let ele of obsData$ | async ; let flag = even" [ngClass]=" flag? 'cls-green' : 'cls-red' " </h5>
+            <ol *ngFor="let ele of obsData$ | async ; let flag = even" [ngClass]=" flag? 'cls-green' : 'cls-red' ">
+                <li>{{ele.firstName}} ,{{ele.lastName}}, {{ele.address.city}}, {{ele.address.pinCode}}</li>
+            </ol>
+            <hr>
+
+            <hr>
+            <h4>NgStyle: </h4><p>The ngStyle is used to set many inline styles dynamically.</p>
+            <p [style.color]="'red'" >Normal style Binding : [style.color]="'red'"</p>
+            <p bind-style.color="'red'" >OR another way is : bind-style.color="'red'" </p>
+            <p [style.background-color]="'grey'" [style.border]="'2px solid red'">setting background color</p>
+
+            <ol *ngFor="let ele of obsData$ | async ; let flag = even" [style.color]="flag?'blue':'red'">
+                <li>{{ele.firstName}} ,{{ele.lastName}}, {{ele.address.city}}, {{ele.address.pinCode}}</li>
+            </ol>
+            <p [ngStyle]="{'color':'purple','font-weight':'bolder'}" >Adding Multiple styles to a paragraph:</p>                            
+        </div>
+      </details>
+
+      <!--Custom Directive: using ElementRef, @HostListner-->
+      <details>
+        <summary>Custom Directive:</summary>
+        <h4>Custom Directive:</h4>
+        <p style="font-weight: bolder;">Angular CD is created to change apperance and behavior of HTML element.</p>
+        <ol>
+            <li>It is a TS class with @Directive Decorator.</li>
+            <li>Use <b>ElementRef</b> class to directly access DOM to change host element appearance.</li>
+            <li>Use <b>@Input()</b>  decorator to accept user input in our custom directive.</li>
+            <li>Use  <b>@HostListner()</b> decorator to listen events in custom attribute directive.</li>
+        </ol>
+        <hr>
+        <p [appHighlighterDir]="favColor" >We have applied custom directive style i.e color  on this paragraph. ( this.eleRef.nativeElement.style = this.myStyle;)</p>
+
+        <hr>
+        <label>Enter Favourit Color:</label>
+        <input type="text">
+        <p appHighlighterDir="{{favColor}}" >Custom directive can also accept input from user. we have to declare @Input(). We must use property name same as selector name.</p>
+
+        <hr>
+        <p>If we want to change element appearance in DOM on any event then we need to listen event in our custom directive.<br>
+        To listen event we will use Angular <b>@HostListener()</b> decorator.</p>
+      </details>
+
+</div>

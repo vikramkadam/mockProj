@@ -14,10 +14,8 @@ export class AngParentComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   getChildValue(event:any)
   {
     this.childValue = event.target.value;
   }
-
 }

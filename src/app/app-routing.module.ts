@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CompDirComponent } from './directives/comp-dir/comp-dir.component';
 import { ArrayFormComponent } from './forms/array-form/array-form.component';
 import { NestedRFComponent } from './forms/nested-rf/nested-rf.component';
 import { TdfComponent } from './forms/tdf/tdf.component';
@@ -18,10 +19,12 @@ const routes: Routes = [
   },
   {
     path:'arrForm', component:ArrayFormComponent
-  }
-  ,
+  },
   {
     path:'angparent', component:AngParentComponent
+  },
+  {
+    path:'directives', component:CompDirComponent
   }
 ];
 
