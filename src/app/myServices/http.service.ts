@@ -40,4 +40,26 @@ export class HttpService {
     return this._http.put(this.baseUrl + endPoint+"/"+id, requestBody);
   }
 
+
+  //------------------------Check User Is Valid or Not----------------------------
+
+  checkUserIsValid()
+  {
+    let getStatus: any = localStorage.getItem("UserStatus");
+    return getStatus;
+  }
+
+
+  //---------------------Methods for canDeactivate Guard---------------------------
+  changeVal:boolean = false;
+  setUserChangeValue(value:boolean)
+  {
+      this.changeVal = value;
+  }
+
+  getUserChangeValue()
+  {
+    return this.changeVal;
+  }
+
 }

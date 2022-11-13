@@ -1,0 +1,76 @@
+<style>
+    h3{text-align: center;}
+</style>
+
+<div class="container-fluid">   
+    <div class="row" style="margin:20px ;">
+
+        <div class="col-lg-6 shadow">
+          <h3><u>Built-In Pipes</u></h3>
+
+          <h4>1. UpperCase:</h4>
+          <p>Here We Used Uppder Case Pipe: {{demoText | uppercase}}</p>
+          <hr>
+
+          <h4>2. LowerCase:</h4>
+          <p>Here We Used Lower Case Pipe: {{demoText | lowercase}}</p>  
+          <hr>
+
+          <h4>3. TitleCase:</h4>
+          <p>Here We Used Lower Case Pipe: {{titleCase | titlecase}}</p>  
+          <hr>
+
+          <h4>4. Currency:</h4>
+          <p>Here We Used Currency Pipe: {{demoCurrency | currency}}</p>
+          <p>By default it give $ , we can add argument by adding (colan :) : {{demoCurrency | currency : "INR" :'symbol':'4.3'}} </p>
+          <hr>
+
+          <h4>5. Date:</h4>
+          <p>Normal Date Binding : <b>{{currentDate | date}}</b></p>
+          <p> : 'shortDate'  Binding : {{currentDate | date : 'shortDate'}}</p>
+          <p>Pipe Chaining currentDate=> Date=> UpperCase=> final o/p : <b>{{currentDate | date:'fullDate' | uppercase}}</b></p>
+          <hr>
+
+          <h4>6. Slice Pipe:</h4>
+          <p>Slice Pipe is an angular Pipe belongs to CommonModule. It Creates new List(array) or string containing a subset(slice) of the string or array.</p>
+          <p>Assueme We have "Vikram kadam" Text: {{demoSlice | slice:2:3}}</p>
+          <p>We can slice on array also: {{demoArray | slice:3:7}}</p>
+          <hr>
+
+          <h4>7. Decimal Pipe:</h4>
+          <p>Decimal Pope is used to Format a number as decimal number into text. This pipe format the number according to local rules.</p>       
+          <p>Normal Decimal Pipe (number): {{demoDecimalValue | number}}</p>
+          <p>Normal Decimal Pipe (3.2-5): {{demoDecimalValue | number : '3.2-5'}}</p>
+          <hr>
+
+          <h4>8. Percent Pipe:</h4>
+          <p>Percent Pope is an angular pope API that formats a number as a percentage according to local rules. It belongs to Common Module.</p>       
+          <p>normal percent : {{ num1 | percent }}</p>
+          <p> (2.2-5): {{num1 | percent : '2.2-5'}}</p>         
+          <hr>
+
+          <h4>9. JSON Pipe:</h4>
+          <p>Using Json pipe used to stringify object or string</p>
+          <p> normal JSON Pipe with Object: {{myDetails  | json}}</p>
+          <p> normal JSON Pipe with string: {{ titleCase | json}}</p>
+         <hr>
+
+         <h4>10. ASYNC Pipe:</h4>
+         <p>We can use Async Pipe with Promices and Observables : It automatically subscribes to observable 
+            and when we leave the component then it automatically unsubscribe.</p>
+        <p>async pipe time$: {{ time$ | async}}</p>
+        <hr>
+
+
+        </div>
+
+
+
+
+        <div class="col-lg-6 shadow">
+            <h3><u>Custom Pipes</u></h3>
+            <app-custom></app-custom>
+          </div>
+
+    </div>
+</div>
