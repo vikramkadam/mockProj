@@ -1,7 +1,32 @@
-a{text-decoration: none;}
-.card{
-    height: 200px; 
-    width: 200px;
-    align-items: center;
+// a{text-decoration: none;}
+// .card{
+//     height: 200px; 
+//     width: 200px;
+//     align-items: center;
    
-}
+// }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(139, 25, 25);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: rgb(158, 145, 145);
+  }

@@ -19,6 +19,18 @@ import { AngParentComponent } from './parent-child/ang-parent/ang-parent.compone
 import { AngChildComponent } from './parent-child/ang-child/ang-child.component';
 import { CompDirComponent } from './directives/comp-dir/comp-dir.component';
 import { HighlighterDirDirective } from './directives/highlighter-dir.directive';
+import { BuiltInComponent } from './pipes/built-in/built-in.component';
+import { CustomComponent } from './pipes/custom/custom.component';
+import { WelcomePipe } from './pipes/welcome.pipe';
+import { EvenoddPipe } from './pipes/evenodd.pipe';
+import { MultiplyPipe } from './pipes/multiply.pipe';
+import { SepratePipe } from './pipes/seprate.pipe';
+import { KgtogramPipe } from './pipes/kgtogram.pipe';
+import { ContactusComponent } from './guardComponents/contactus/contactus.component';
+import { Chil1Component } from './guardComponents/chil1/chil1.component';
+import { Chil2Component } from './guardComponents/chil2/chil2.component';
+import { CanActivateChildComponent } from './guardComponents/can-activate-child/can-activate-child.component';
+import { RegformcandestoryComponent } from './guardComponents/regformcandestory/regformcandestory.component';
 
 // ToastrModule.forRoot({
 //   timeOut: 2000,
@@ -41,7 +53,19 @@ import { HighlighterDirDirective } from './directives/highlighter-dir.directive'
     AngParentComponent,
     AngChildComponent,
     CompDirComponent,
-    HighlighterDirDirective
+    HighlighterDirDirective,
+    BuiltInComponent,
+    CustomComponent,
+    WelcomePipe,
+    EvenoddPipe,
+    MultiplyPipe,
+    SepratePipe,
+    KgtogramPipe,
+    ContactusComponent,
+    Chil1Component,
+    Chil2Component,
+    CanActivateChildComponent,
+    RegformcandestoryComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +76,7 @@ import { HighlighterDirDirective } from './directives/highlighter-dir.directive'
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 5000,
+      timeOut: 2000,
       //positionClass: 'toast-top-right', 
       positionClass: 'toast-top-full-width',
       toastClass:'ngx-toastr',

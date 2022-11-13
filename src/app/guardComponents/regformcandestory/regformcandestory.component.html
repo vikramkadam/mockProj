@@ -1,0 +1,8 @@
+<p>regformcandestory works!</p>
+
+
+<form [formGroup]="regForm">
+    <input type="text" formControlName="userName" placeholder="First Name"><br><br>
+    <input type="text" formControlName="password" placeholder="Password">
+    <button (click)="submit()">submit</button>
+</form>

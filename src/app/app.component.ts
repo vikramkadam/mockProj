@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mockProj';
+
+
+  setLigin()
+  {
+    localStorage.setItem("UserStatus","true");
+  }
+
+  clearStorage()
+  {
+    localStorage.clear();
+    window.location.reload();
+  }
+
+
 }

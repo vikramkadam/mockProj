@@ -1,0 +1,22 @@
+
+<p>To create Custom Pipes angular provides Pipe and PipeTransform interface.</p>
+<p>By default Pipes are pure , when we want to make it impure we make pure:false</p>
+
+<br>
+
+<h3>1. Welcom Pipe </h3>
+<input type="text" [(ngModel)]="welcomeVal" >
+<p>Show Transformed Data: {{welcomeVal  | welcome}}</p>
+
+
+<h3>2. Even Odd</h3>
+<p>Is {{welcomeVal}} Even : {{welcomeVal | evenodd }}</p>
+
+<h3>2. Multiply by 10:</h3>
+<p> 10* {{welcomeVal}} = {{welcomeVal | multiply }}</p>
+
+<h3>4. JSON.Stringify</h3>
+<p> JSON By nothing: {{welcomeVal}} = {{welcomeVal | seprate }}</p>
+
+<h3>4. kg-grams</h3>
+<p> Enter value In Kg : {{welcomeVal}} = {{welcomeVal | kgtogram }} grams.</p>
